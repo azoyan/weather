@@ -6,21 +6,48 @@
   <meta name="theme-color" content="#0d6efd" />
   <title>Ощущаемая температура</title>
   <link rel="manifest" href="manifest.json" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet" />
 </head>
-<body>
-  <main>
-    <h1>Ощущаемая температура</h1>
-    <form id="form">
-      <input type="number" id="temp" placeholder="Температура (°C)" required />
-      <input type="number" id="humidity" placeholder="Влажность (%)" required />
-      <input type="number" id="wind" placeholder="Ветер (км/ч)" required />
-      <label><input type="checkbox" id="isNight" /> Ночь</label>
-      <label><input type="checkbox" id="isCloudy" /> Облачно</label>
-      <button type="submit">Рассчитать</button>
-    </form>
-    <p id="result"></p>
-  </main>
+<body class="bg-light">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-5">
+        <div class="card shadow rounded-4">
+          <div class="card-body">
+            <h1 class="card-title text-center mb-4">Ощущаемая температура</h1>
+            <form id="form">
+              <div class="mb-3">
+                <label for="temp" class="form-label">Температура (°C)</label>
+                <input type="number" class="form-control" id="temp" required />
+              </div>
+              <div class="mb-3">
+                <label for="humidity" class="form-label">Влажность (%)</label>
+                <input type="number" class="form-control" id="humidity" required />
+              </div>
+              <div class="mb-3">
+                <label for="wind" class="form-label">Скорость ветра (км/ч)</label>
+                <input type="number" class="form-control" id="wind" required />
+              </div>
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" id="isNight" />
+                <label class="form-check-label" for="isNight">Ночь</label>
+              </div>
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="isCloudy" />
+                <label class="form-check-label" for="isCloudy">Облачно</label>
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Рассчитать</button>
+            </form>
+            <div class="mt-4 text-center">
+              <p id="result" class="fs-4 fw-semibold"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
