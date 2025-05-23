@@ -8,6 +8,19 @@ function perceivedTemperature(t, h, w, night, cloudy) {
   return result.toFixed(1);
 }
 
+// Определяем язык и фразу локализации
+function getLocalizedFeelsLikeText(lang) {
+  switch (lang) {
+    case "es":
+      return "Se siente como";
+    case "en":
+      return "Feels like";
+    case "ru":
+    default:
+      return "Ощущается как";
+  }
+}
+
 function updateResult() {
   const t = parseFloat(document.getElementById("temp").value);
   const h = parseFloat(document.getElementById("humidity").value);
@@ -21,9 +34,12 @@ function updateResult() {
   const night = document.getElementById("isNight").checked;
   const cloudy = document.getElementById("isCloudy").checked;
 
+  const lang = navigator.language.slice(0, 2); // "ru", "es", "en", etc.
+  const feelsLikeText = getLocalizedFeelsLikeText(lang);
+
   if (!isNaN(t) && !isNaN(h) && !isNaN(w)) {
     const result = perceivedTemperature(t, h, w, night, cloudy);
-    document.getElementById("result").textContent = `Ощущается как ${result} °C`;
+    document.getElementById("result").textContent = `${feelsLikeText} ${result} °C`;
   } else {
     document.getElementById("result").textContent = '';
   }
