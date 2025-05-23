@@ -1,33 +1,39 @@
- body {
-    background-color: #f8f9fa;
-    color: #212529;
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.temperature-form {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+#result {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #212529;
+    color: #f8f9fa;
+  }
+
+  .form-control,
+  .form-check-input {
+    background-color: #343a40;
+    color: #f8f9fa;
+    border-color: #495057;
+  }
+
+  .form-control:focus {
+    background-color: #343a40;
+    color: #f8f9fa;
   }
 
   #result {
-    font-size: 2rem;
-    font-weight: 600;
-    color: #0d6efd;
+    color: #66b2ff;
   }
-
-  @media (prefers-color-scheme: dark) {
-    body {
-      background-color: #212529;
-      color: #f8f9fa;
-    }
-
-    .form-control,
-    .form-check-input {
-      background-color: #343a40;
-      color: #f8f9fa;
-      border-color: #495057;
-    }
-
-    .form-control:focus {
-      background-color: #343a40;
-      color: #f8f9fa;
-    }
-
-    #result {
-      color: #66b2ff;
-    }
-  }
+}
