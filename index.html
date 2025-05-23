@@ -52,6 +52,24 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./sw.js');
     }
+    
+    const lang = navigator.language || navigator.userLanguage;
+
+    if (lang.startsWith("es")) {
+      document.querySelector("h1").textContent = "Sensación térmica";
+      document.querySelector('label[for="temp"]').textContent = "Temperatura (°C)";
+      document.querySelector('label[for="humidity"]').textContent = "Humedad (%)";
+      document.querySelector('label[for="wind"]').textContent = "Velocidad del viento";
+      document.querySelector('label[for="isNight"]').textContent = "Noche";
+      document.querySelector('label[for="isCloudy"]').textContent = "Nublado";
+    } else if (!lang.startsWith("ru")) {
+      document.querySelector("h1").textContent = "Feels Like Temperature";
+      document.querySelector('label[for="temp"]').textContent = "Temperature (°C)";
+      document.querySelector('label[for="humidity"]').textContent = "Humidity (%)";
+      document.querySelector('label[for="wind"]').textContent = "Wind Speed";
+      document.querySelector('label[for="isNight"]').textContent = "Night";
+      document.querySelector('label[for="isCloudy"]').textContent = "Cloudy";
+    }
   </script>
 </body>
 </html>
