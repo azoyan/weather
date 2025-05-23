@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0d6efd" />
+  <title>Ощущаемая температура</title>
+  <link rel="manifest" href="manifest.json" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <main>
+    <h1>Ощущаемая температура</h1>
+    <form id="form">
+      <input type="number" id="temp" placeholder="Температура (°C)" required />
+      <input type="number" id="humidity" placeholder="Влажность (%)" required />
+      <input type="number" id="wind" placeholder="Ветер (км/ч)" required />
+      <label><input type="checkbox" id="isNight" /> Ночь</label>
+      <label><input type="checkbox" id="isCloudy" /> Облачно</label>
+      <button type="submit">Рассчитать</button>
+    </form>
+    <p id="result"></p>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js');
+    }
+  </script>
+</body>
+</html>
