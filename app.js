@@ -11,7 +11,13 @@ function perceivedTemperature(t, h, w, night, cloudy) {
 function updateResult() {
   const t = parseFloat(document.getElementById("temp").value);
   const h = parseFloat(document.getElementById("humidity").value);
-  const w = parseFloat(document.getElementById("wind").value);
+  let w = parseFloat(document.getElementById("wind").value);
+
+  const unit = document.querySelector('input[name="windUnit"]:checked').value;
+  if (unit === "ms") {
+    w *= 3.6; // м/с → км/ч
+  }
+
   const night = document.getElementById("isNight").checked;
   const cloudy = document.getElementById("isCloudy").checked;
 
