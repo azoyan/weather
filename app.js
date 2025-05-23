@@ -33,3 +33,4 @@ document.querySelectorAll("input").forEach(input => {
   input.addEventListener("input", updateResult);
   input.addEventListener("change", updateResult);
 });
+updateResult();
