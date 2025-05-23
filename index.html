@@ -22,8 +22,16 @@
         <input type="number" class="form-control" id="humidity" value="50" required />
       </div>
       <div class="mb-3">
-        <label for="wind" class="form-label">Скорость ветра (км/ч)</label>
+        <label for="wind" class="form-label">Скорость ветра</label>
         <input type="number" class="form-control" id="wind" value="10" required />
+        <div class="form-check form-check-inline mt-2">
+          <input class="form-check-input" type="radio" name="windUnit" id="kmh" value="kmh" checked />
+          <label class="form-check-label" for="kmh">км/ч</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="windUnit" id="ms" value="ms" />
+          <label class="form-check-label" for="ms">м/с</label>
+        </div>
       </div>
       <div class="form-check mb-2">
         <input class="form-check-input" type="checkbox" id="isNight" />
